@@ -21,6 +21,12 @@ func main() {
 		"Maria", 589, 123456, 125.50,
 	}
 
+	//Outra maneira de inicializar struct ( pouco utilizado )
+	var contaDaJoana *ContaCorrente
+	contaDaJoana = new(ContaCorrente)
+	contaDaJoana.titular = "Joana"
+
 	fmt.Println(contaDoRodrigo)
 	fmt.Println(contaDaMaria)
+	fmt.Println(contaDaJoana)
 }

@@ -17,16 +17,33 @@ func main() {
 		saldo:         125.50,
 	}
 
-	contaDaMaria := ContaCorrente{
-		"Maria", 589, 123456, 125.50,
+	contaDoRodrigo2 := ContaCorrente{
+		titular:       "Rodrigo",
+		numeroAgencia: 589,
+		numeroConta:   123456,
+		saldo:         125.50,
 	}
 
-	//Outra maneira de inicializar struct ( pouco utilizado )
+	// == compara conteudo em Go
+	fmt.Println(contaDoRodrigo == contaDoRodrigo2)
+
+	//Outra maneira de inicializar struct
 	var contaDaJoana *ContaCorrente
 	contaDaJoana = new(ContaCorrente)
 	contaDaJoana.titular = "Joana"
 
-	fmt.Println(contaDoRodrigo)
-	fmt.Println(contaDaMaria)
+	var contaDaJoana2 *ContaCorrente
+	contaDaJoana2 = new(ContaCorrente)
+	contaDaJoana2.titular = "Joana"
+
 	fmt.Println(contaDaJoana)
+	fmt.Println(contaDaJoana2)
+	fmt.Println(&contaDaJoana)
+	fmt.Println(&contaDaJoana2)
+
+	//A comparacao é realizada por endereco de memoria = false
+	fmt.Println(contaDaJoana == contaDaJoana2)
+	//A comparacao é realizada por conteudo = true
+	fmt.Println(*contaDaJoana == *contaDaJoana2)
+
 }
